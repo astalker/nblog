@@ -9,12 +9,12 @@ Simple Blog CMS using Mongoose, Express and EJS.
 
 ## Usage
 
-  Simply add the following to your main script
+Add the following to your main script and specify your login details.
 
-  var nblog = require('nblog');
-  nblog.init('user', 'password');
+    var nblog = require('nblog');
+    nblog.init('user', 'password');
 
-  Nblog requires Mongo DB so make sure to start it before running your App.
+Nblog requires Mongo DB so make sure to start it before running your App.
 
 ## Features
 
