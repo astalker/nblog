@@ -20,11 +20,11 @@
     "url": "https://github.com/astalker"
   },
   "dependencies": {
-    "express": "3.0.3",
-    "ejs": "0.8.3",
-    "moment": "1.7.2",
-    "crypto": "0.0.3",
-    "mongoose": "3.4.0"
+    "express": "3.0.x",
+    "ejs": "0.8.x",
+    "moment": "1.7.x",
+    "crypto": "0.0.x",
+    "mongoose": "3.4.x"
   },
   "readmeFilename": "README.md",
   "_id": "nblog@0.1.0",
