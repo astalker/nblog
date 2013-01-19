@@ -1,0 +1,25 @@
+<% include head %>
+
+<% articles.forEach(function(article) { %>
+
+    <article>
+        <hgroup>
+        <h2><%= article.title %></h2>
+        <h6><%= moment(new Date(article.ts)).format("Do MMM YYYY") %></h6>
+        </hgroup>
+
+        <p>
+        <form method="GET" action="/edit" class="edit_form">
+            <input type="submit" value="Edit" />
+            <input type="hidden" name="id" value="<%= article._id %>">
+        </form>
+        <form method="GET" action="/del" class="edit_form">
+            <input type="submit" value="Delete" />
+            <input type="hidden" name="id" value="<%= article._id %>">
+        </form>
+        </p>
+
+    </article>
+<% }); %>
+
+<% include foot %>

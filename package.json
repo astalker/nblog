@@ -1,0 +1,32 @@
+{
+  "name": "nblog",
+  "version": "0.1.0",
+  "description": "Simple Blog CMS using Express, EJS and Mongoose",
+  "author": {
+    "name": "Alasdair Stalker",
+    "email": "alasdair@asta.org.uk",
+    "url": "http://www.asta.org.uk"
+  },
+  "keywords": [
+    "cms",
+    "blog"
+  ],
+  "main": "./lib/nblog.js",
+  "engines": {
+    "node": "0.8.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/astalker"
+  },
+  "dependencies": {
+    "express": "3.0.3",
+    "ejs": "0.8.3",
+    "moment": "1.7.2",
+    "crypto": "0.0.3",
+    "mongoose": "3.4.0"
+  },
+  "readmeFilename": "README.md",
+  "_id": "nblog@0.1.0",
+  "_from": "nblog"
+}

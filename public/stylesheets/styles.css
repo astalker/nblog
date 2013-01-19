@@ -1,0 +1,44 @@
+
+article {
+	clear:both;
+}
+li {
+	display: inline;
+}
+li a
+{
+	text-decoration: none;
+	background-color: #036;
+	color: #FFF;
+	padding: .2em 1em;
+	border-right: 1px solid #fff;
+}
+li a:hover
+{
+	background-color: #369;
+	color: #fff;
+}
+td {
+	padding: 3px 10px;
+}
+.row0 td{
+	background: #f0f0f0;
+}
+.edit_form {
+	float: left;
+}
+#container {
+	margin: auto;
+	width: 500px;
+}
+#navcontainer ul
+{
+	padding: .2em 0;
+	margin: 0;
+	list-style-type: none;
+	background-color: #036;
+	color: #FFF;
+	width: 100%;
+	font: normal 90% arial, helvetica, sans-serif;
+	text-align: center;
+}

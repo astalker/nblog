@@ -1,0 +1,31 @@
+<% include head %>
+
+    <script>
+    $(function() {
+        $("#datepicker").datepicker();
+    });
+    $(document).ready(function(){
+        $('#articleForm').submit(function() {
+            return $(this).validate();
+        });
+    });
+    </script>
+
+<form method="POST" action="<%= postpath %>" id="articleForm">
+	<% if (item) { %><input type="hidden" name="id" value="<%= item._id %>"><% } %>
+	<h2>Title</h2>
+	<input type="text" name="title" value="<%= item.title %>" data-validation="required" />
+	<h2>Date</h2>
+	<input type="text" name="ts" value="<%= ts %>" data-validation="required" id="datepicker" />
+	<h2>Alias</h2>
+	<input type="text" name="alias" value="<%= item.alias %>" class="input" id="alias" />
+	<h2>Content</h2>
+	<textarea rows="5" cols="40" name="article"><%= item.article %></textarea>
+	<h2>Description</h2>
+	<textarea rows="3" cols="40" name="description" data-validation="required"><%= item.description %></textarea>
+	<h2>Keywords</h2>
+	<textarea rows="1" cols="40" name="keywords"><%= item.keywords %></textarea>
+	<br/><input type="submit" value="Submit" />
+</form>
+
+<% include foot %>

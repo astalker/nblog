@@ -1,0 +1,19 @@
+
+<% include head %>
+
+
+<% articles.forEach(function(article) { %>
+
+	<article>
+		<hgroup>
+		<h2><a href="/<%= moment(new Date(article.ts)).format("YYYY") %>/<%= moment(new Date(article.ts)).format("MM") %>/<%= moment(new Date(article.ts)).format("DD") %>/<%= article.alias  %>"><%= article.title  %></a></h2>
+		<h6><%= moment(new Date(article.ts)).format("Do MMM YYYY") %></h6>
+		</hgroup>
+
+        <p><%- article.article %></p>
+
+    </article>
+<% }); %>
+
+
+<% include foot %>
