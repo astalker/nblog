@@ -13,18 +13,20 @@ Add the following to your main script and specify your login details for the Adm
 
     var nblog = require('nblog');
     params = {
+        config: {
+            public: '/../public',
+            per_page: '10'
+        },
         dev: {
             user: 'user',
             pass: 'password',
             port: '3000',
-            db:   'mongodb://localhost/articles',
-            public: '/../public'
+            db:   'mongodb://localhost/articles'
             },
         prod: {
-            user: '',
-            pass: '',
-            db:   '',
-            public: '/../public'
+            user: 'user',
+            pass: 'password',
+            db:   'mongodb://localhost/articles'
             }
     }
     nblog.init(params);
