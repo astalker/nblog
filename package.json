@@ -1,32 +1,29 @@
 {
   "name": "nblog",
-  "version": "0.1.0",
-  "description": "Simple Blog CMS using Express, EJS and Mongoose",
-  "author": {
-    "name": "Alasdair Stalker",
-    "email": "alasdair@asta.org.uk",
-    "url": "http://www.asta.org.uk"
+  "version": "0.2.0",
+  "description": "Simple Blog CMS using Express and Mongo",
+  "main": "nblog.js",
+  "dependencies": {
+    "ejs": "~0.8.3",
+    "express": "~3.0.3",
+    "moment": "~1.7.2",
+    "crypto": "~0.0.3",
+    "mongoose": "3.4.x"
   },
-  "keywords": [
-    "cms",
-    "blog"
-  ],
-  "main": "./lib/nblog.js",
-  "engines": {
-    "node": "0.8.x"
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/astalker"
+    "url": "git://github.com/astalker/nblog.git"
   },
-  "dependencies": {
-    "express": "3.0.x",
-    "ejs": "0.8.x",
-    "moment": "1.7.x",
-    "crypto": "0.0.x",
-    "mongoose": "3.4.x"
-  },
-  "readmeFilename": "README.md",
-  "_id": "nblog@0.1.0",
-  "_from": "nblog"
+  "keywords": [
+    "Blog",
+    "CMS",
+    "Admin"
+  ],
+  "author": "Alasdair Stalker",
+  "license": "MIT",
+  "readmeFilename": "README.md"
 }

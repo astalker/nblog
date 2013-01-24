@@ -2,22 +2,6 @@
 article {
 	clear:both;
 }
-li {
-	display: inline;
-}
-li a
-{
-	text-decoration: none;
-	background-color: #036;
-	color: #FFF;
-	padding: .2em 1em;
-	border-right: 1px solid #fff;
-}
-li a:hover
-{
-	background-color: #369;
-	color: #fff;
-}
 td {
 	padding: 3px 10px;
 }
@@ -27,11 +11,11 @@ td {
 .edit_form {
 	float: left;
 }
-#container {
+section {
 	margin: auto;
 	width: 500px;
 }
-#navcontainer ul
+nav#top ul
 {
 	padding: .2em 0;
 	margin: 0;
@@ -41,4 +25,43 @@ td {
 	width: 100%;
 	font: normal 90% arial, helvetica, sans-serif;
 	text-align: center;
+}
+nav#top li {
+	display: inline;
+}
+nav#top li a
+{
+	text-decoration: none;
+	background-color: #036;
+	color: #FFF;
+	padding: .2em 1em;
+	border-right: 1px solid #fff;
+}
+nav#top li a:hover
+{
+	background-color: #369;
+	color: #fff;
+}
+nav.sub ul
+{
+	padding: .2em 0;
+	margin: 0;
+	list-style-type: none;
+	width: 100%;
+	font: normal 90% arial, helvetica, sans-serif;
+	text-align: center;
+}
+nav.sub li {
+	display: inline;
+}
+nav.sub li a
+{
+	text-decoration: none;
+	color: #999;
+	padding: .2em 1em;
+}
+nav.sub li a:hover
+{
+	background-color: #f0f0f0;
+	color: #666;
 }

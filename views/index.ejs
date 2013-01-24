@@ -1,6 +1,16 @@
 
 <% include head %>
 
+<nav class="sub">
+	<ul>
+		<% if (prev > 0){ %>
+		<li><a href="/page/<%= prev %>">Prev</a></li>
+		<% } %>
+		<% if (next > 0){ %>
+		<li><a href="/page/<%= next %>">Next</a></li>
+		<% } %>
+	</ul>
+</nav>
 
 <% articles.forEach(function(article) { %>
 
@@ -14,5 +24,16 @@
 
     </article>
 <% }); %>
+
+<nav class="sub">
+	<ul>
+		<% if (prev > 0){ %>
+		<li><a href="/page/<%= prev %>">Prev</a></li>
+		<% } %>
+		<% if (next > 0){ %>
+		<li><a href="/page/<%= next %>">Next</a></li>
+		<% } %>
+	</ul>
+</nav>
 
 <% include foot %>
