@@ -14,6 +14,7 @@ Add the following to your main script and specify your login details for the Adm
     var nblog = require('nblog');
     params = {
         config: {
+            project: 'My Project',
             public: '/../public',
             per_page: '10'
         },
