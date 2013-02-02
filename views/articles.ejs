@@ -1,10 +1,10 @@
 <% include head %>
 
 <h1>Articles</h1>
-<table class="articles">
+<table class="table table-hover">
 	<tbody>
 	<% articles.forEach(function(article) { %>
-		<tr class="<% if (count%2===1){ %>row0<% }%>" >
+		<tr>
 			<td>
 				<a href="/<%= moment(new Date(article.ts)).format("YYYY") %>/<%= moment(new Date(article.ts)).format("MM") %>/<%= moment(new Date(article.ts)).format("DD") %>/<%= article.alias.replace(/ /g, '-').toLowerCase()  %>"><%= article.title  %></a>
 			</td>

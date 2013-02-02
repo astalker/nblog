@@ -1,6 +1,6 @@
 {
   "name": "nblog",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Simple Blog CMS using Express and Mongo",
   "main": "nblog.js",
   "dependencies": {
@@ -10,7 +10,9 @@
     "crypto": "~0.0.3",
     "mongoose": "3.4.x"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "0.3.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

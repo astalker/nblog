@@ -1,25 +1,27 @@
 <% include head %>
 
-<% articles.forEach(function(article) { %>
-
-    <article>
-        <hgroup>
-        <h2><%= article.title %></h2>
-        <h6><%= moment(new Date(article.ts)).format("Do MMM YYYY") %></h6>
-        </hgroup>
-
-        <p>
-        <form method="GET" action="/edit" class="edit_form">
-            <input type="submit" value="Edit" />
-            <input type="hidden" name="id" value="<%= article._id %>">
-        </form>
-        <form method="GET" action="/del" class="edit_form">
-            <input type="submit" value="Delete" />
-            <input type="hidden" name="id" value="<%= article._id %>">
-        </form>
-        </p>
-
-    </article>
-<% }); %>
+<h1>Admin</h1>
+<table class="table table-hover">
+    <tbody>
+    <% articles.forEach(function(article) { %>
+        <tr>
+            <td><%= article.title %></td>
+            <td><%= moment(new Date(article.ts)).format("Do MMM YYYY") %></td>
+            <td>
+                <div class="btn-group">
+                <form method="GET" action="/edit" class="edit_form" style="display:inline">
+                    <input type="submit" value="Edit" class="btn" />
+                    <input type="hidden" name="id" value="<%= article._id %>" class="btn">
+                </form>
+                <form method="GET" action="/del" class="edit_form" style="display:inline;margin:0 10px">
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                    <input type="hidden" name="id" value="<%= article._id %>">
+                </form>
+                </div>
+            </td>
+        </tr>
+    <% }); %>
+    </tbody>
+</table>
 
 <% include foot %>

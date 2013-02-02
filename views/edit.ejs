@@ -11,21 +11,24 @@
     });
     </script>
 
+<h1><%= title %></h1>
+
 <form method="POST" action="<%= postpath %>" id="articleForm">
 	<% if (item) { %><input type="hidden" name="id" value="<%= item._id %>"><% } %>
-	<h2>Title</h2>
+	<label>Title</label>
 	<input type="text" name="title" value="<%= item.title %>" data-validation="required" />
-	<h2>Date</h2>
+	<label>Date</label>
 	<input type="text" name="ts" value="<%= ts %>" data-validation="required" id="datepicker" />
-	<h2>Alias</h2>
+	<label>Alias</label>
 	<input type="text" name="alias" value="<%= item.alias %>" class="input" id="alias" />
-	<h2>Content</h2>
+	<label>Content</label>
 	<textarea rows="5" cols="40" name="article"><%= item.article %></textarea>
-	<h2>Description</h2>
+	<label>Description</label>
 	<textarea rows="3" cols="40" name="description" data-validation="required"><%= item.description %></textarea>
-	<h2>Keywords</h2>
+	<label>Keywords</label>
 	<textarea rows="1" cols="40" name="keywords"><%= item.keywords %></textarea>
-	<br/><input type="submit" value="Submit" />
+	<label></label>
+	<input type="submit" value="Submit" class="btn" />
 </form>
 
 <% include foot %>
