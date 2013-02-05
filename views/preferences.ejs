@@ -1,0 +1,24 @@
+<% include head %>
+
+    <script>
+    $(document).ready(function(){
+        $('#articleForm').submit(function() {
+            return $(this).validate();
+        });
+    });
+    </script>
+
+<h1><%= title %></h1>
+
+<form method="POST" action="/save" id="articleForm">
+    <label>Articles per page</label>
+    <input type="text" name="number_items" value="<%= project.items %>" class="input" id="alias" data-validation="required" />
+    <label>Meta Description</label>
+    <textarea rows="3" cols="40" name="description" data-validation="required"><%= project.description %></textarea>
+    <label>Meta Keywords</label>
+    <textarea rows="1" cols="40" name="keywords"><%= project.description %></textarea>
+    <label></label>
+    <input type="submit" value="Submit" class="btn btn-primary" />
+</form>
+
+<% include foot %>

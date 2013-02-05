@@ -25,7 +25,7 @@
         <li<% if (title==='Home'){ %> class="active"<% } %>><a href="/">Home</a></li>
         <li<% if (title==='Articles'){ %> class="active"<% } %>><a href="/articles">Articles</a></li>
         <% if (loggedin){ %>
-        <li<% if (title==='Admin' || title==='Edit'){ %> class="active"<% } %>><a href='/admin'>Admin</a></li>
+        <li<% if (title==='Admin' || title==='Edit' || title==='Preferences'){ %> class="active"<% } %>><a href='/admin'>Admin</a></li>
         <li<% if (title==='Add'){ %> class="active"<% } %>><a href='/add'>Add</a></li>
         <li><a href='/logout'>Logout</a></li>
         <% } else { %>
