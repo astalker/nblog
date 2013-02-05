@@ -1,16 +1,14 @@
 
 <% include head %>
 
-<nav class="sub">
-	<ul>
-		<% if (prev > 0){ %>
-		<li><a href="/page/<%= prev %>">Prev</a></li>
-		<% } %>
-		<% if (next > 0){ %>
-		<li><a href="/page/<%= next %>">Next</a></li>
-		<% } %>
-	</ul>
-</nav>
+<div class="btn-group">
+	<% if (prev > 0){ %>
+	<a class="btn btn-mini" href="/page/<%= prev %>">Prev</a>
+	<% } %>
+	<% if (next > 0){ %>
+	<a class="btn btn-mini" href="/page/<%= next %>">Next</a>
+	<% } %>
+</div>
 
 <% articles.forEach(function(article) { %>
 
@@ -21,15 +19,13 @@
 	</article>
 <% }); %>
 
-<nav class="sub">
-	<ul>
-		<% if (prev > 0){ %>
-		<li><a href="/page/<%= prev %>">Prev</a></li>
-		<% } %>
-		<% if (next > 0){ %>
-		<li><a href="/page/<%= next %>">Next</a></li>
-		<% } %>
-	</ul>
-</nav>
+<div class="btn-group">
+	<% if (prev > 0){ %>
+	<a class="btn btn-mini" href="/page/<%= prev %>">Prev</a>
+	<% } %>
+	<% if (next > 0){ %>
+	<a class="btn btn-mini" href="/page/<%= next %>">Next</a>
+	<% } %>
+</div>
 
 <% include foot %>
