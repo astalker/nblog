@@ -26,13 +26,12 @@
         <li<% if (title==='Articles'){ %> class="active"<% } %>><a href="/articles">Articles</a></li>
         <% if (loggedin){ %>
         <li<% if (title==='Admin' || title==='Edit' || title==='Preferences'){ %> class="active"<% } %>><a href='/admin'>Admin</a></li>
-        <li<% if (title==='Add'){ %> class="active"<% } %>><a href='/add'>Add</a></li>
         <li><a href='/logout'>Logout</a></li>
         <% } else { %>
         <li><a href='/login'>Login</a></li>
         <% } %>
       </ul>
-      <h3 class="muted"><%= params.config.project %></h3>
+      <h3 class="muted"><%= title %></h3>
     </div>
 
     <hr>
