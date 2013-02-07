@@ -11,8 +11,6 @@
     });
     </script>
 
-<h1><%= title %></h1>
-
 <form method="POST" action="<%= postpath %>" id="articleForm">
 	<% if (item) { %><input type="hidden" name="id" value="<%= item._id %>"><% } %>
 	<label>Title</label>
@@ -26,7 +24,7 @@
 	<label>Description</label>
 	<textarea rows="3" cols="40" name="description" data-validation="required"><%= item.description %></textarea>
 	<label>Keywords</label>
-	<textarea rows="1" cols="40" name="keywords"><%= item.keywords %></textarea>
+	<textarea rows="3" cols="40" name="keywords"><%= item.keywords %></textarea>
 	<label></label>
 	<input type="submit" value="Submit" class="btn" />
 </form>
