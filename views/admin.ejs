@@ -5,6 +5,16 @@
         <strong>Success</strong> <%= flash %>.
     </div>
 <% } %>
+<% if (delete_notice){ %>
+    <div class="alert">
+        <strong>Warning</strong> are you sure you want to delete this Article?.
+        <a href="/admin" class="btn">No</a>
+        <form method="GET" action="/delconfirm" class="edit_form" style="display:inline;margin:0 10px">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <input type="hidden" name="id" value="<%= delete_notice %>">
+        </form>
+    </div>
+<% } %>
 <h4>Preferences</h4>
 <div class="btn-group">
     <a class="btn" href="/preferences">Edit Preferences</a>
