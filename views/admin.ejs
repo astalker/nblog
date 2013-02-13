@@ -7,7 +7,7 @@
 <% } %>
 <% if (delete_notice){ %>
     <div class="alert">
-        <strong>Warning</strong> are you sure you want to delete this Article?.
+        <strong>Warning</strong> are you sure you want to delete this Article?
         <a href="/admin" class="btn">No</a>
         <form method="GET" action="/delconfirm" class="edit_form" style="display:inline;margin:0 10px">
             <input type="submit" value="Delete" class="btn btn-danger" />
@@ -15,11 +15,46 @@
         </form>
     </div>
 <% } %>
+<% if (delete_page_notice){ %>
+    <div class="alert">
+        <strong>Warning</strong> are you sure you want to delete this Page?
+        <a href="/admin" class="btn">No</a>
+        <form method="GET" action="/del-page-confirm" class="edit_form" style="display:inline;margin:0 10px">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <input type="hidden" name="id" value="<%= delete_page_notice %>">
+        </form>
+    </div>
+<% } %>
 <h4>Preferences</h4>
 <div class="btn-group">
     <a class="btn" href="/preferences">Edit Preferences</a>
     <a class="btn" href="/add">New Article</a>
+    <a class="btn" href="/add-page">New Page</a>
 </div>
+
+<h4>Existing pages</h4>
+<table class="table table-hover">
+    <tbody>
+    <% pages.forEach(function(page) { %>
+        <tr>
+            <td><%= page.page %></td>
+            <td><%= moment(new Date(page.ts)).format("Do MMM YYYY") %></td>
+            <td>
+                <div class="btn-group">
+                <form method="GET" action="/edit-page" class="edit_form" style="display:inline">
+                    <input type="submit" value="Edit" class="btn" />
+                    <input type="hidden" name="id" value="<%= page._id %>" class="btn">
+                </form>
+                <form method="GET" action="/del-page" class="edit_form" style="display:inline;margin:0 10px">
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                    <input type="hidden" name="id" value="<%= page._id %>">
+                </form>
+                </div>
+            </td>
+        </tr>
+    <% }); %>
+    </tbody>
+</table>
 <h4>Existing articles</h4>
 <table class="table table-hover">
     <tbody>

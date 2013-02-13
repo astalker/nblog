@@ -35,3 +35,7 @@ body {
 	margin-bottom: 15px;
 	padding: 7px 9px;
 }
+.gravatar {
+	float: left;
+	margin: 5px 10px 0 0;
+}

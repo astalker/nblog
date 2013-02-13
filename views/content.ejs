@@ -1,0 +1,9 @@
+<% include head %>
+
+	<article>
+		<h2><%= content.page  %></h2>
+		<h5><%= moment(new Date(content.ts)).format("Do MMM YYYY") %></h5>
+        <p><%- content.content %></p>
+    </article>
+
+<% include foot %>
