@@ -10,17 +10,17 @@
 
 <form method="POST" action="/save" id="articleForm">
     <label for="name">Site Name</label>
-    <input type="text" name="name" value="<%= project.name %>" class="input" id="project-name" data-validation="required" />
+    <input type="text" name="name" value="<%= prefs.settings.name %>" class="input" id="project-name" data-validation="required" />
     <label for="email">Email address</label>
-    <input type="text" name="email" value="<%= project.email %>" class="input" id="project-email" />
+    <input type="text" name="email" value="<%= prefs.settings.email %>" class="input" id="project-email" />
     <label for="items">Articles per page</label>
-    <input type="text" name="items" value="<%= project.items %>" class="input" id="project-items" data-validation="required" />
+    <input type="text" name="items" value="<%= prefs.settings.items %>" class="input" id="project-items" data-validation="required" />
     <label for="description">Meta Description</label>
-    <textarea rows="3" cols="60" name="description" data-validation="required"><%= project.description %></textarea>
+    <textarea rows="3" cols="60" name="description" data-validation="required"><%= prefs.settings.description %></textarea>
     <label for="keywords">Meta Keywords</label>
-    <textarea rows="3" cols="60" name="keywords"><%= project.keywords %></textarea>
+    <textarea rows="3" cols="60" name="keywords"><%= prefs.settings.keywords %></textarea>
     <label for="gravatar">Display Gravatar</label>
-    <input type="checkbox" name="gravatar" value="1"<% if (project.gravatar){ %> checked="checked"<% } %>/>
+    <input type="checkbox" name="gravatar" value="1"<% if (prefs.settings.gravatar){ %> checked="checked"<% } %>/>
     <label for="submit"></label>
     <input name="submit" type="submit" value="Submit" class="btn btn-primary" />
 </form>

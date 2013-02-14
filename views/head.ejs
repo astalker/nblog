@@ -24,6 +24,9 @@
             <ul class="nav nav-pills pull-right">
                 <li<% if (title==='Home'){ %> class="active"<% } %>><a href="/">Home</a></li>
                 <li<% if (title==='Articles'){ %> class="active"<% } %>><a href="/articles">Articles</a></li>
+                <% prefs.pages.forEach(function(page) { %>
+                <li><a href="/content/<%= page.alias %>"><%= page.page %></a></li>
+                <% }); %>
                 <% if (loggedin){ %>
                 <li<% if (title==='Admin' || title==='Edit' || title==='Preferences'){ %> class="active"<% } %>><a href='/admin'>Admin</a></li>
                 <li><a href='/logout'>Logout</a></li>
@@ -31,9 +34,9 @@
                 <li><a href='/login'>Login</a></li>
                 <% } %>
             </ul>
-            <% if (prefs.gravatar_url!=''){ %>
+            <% if (prefs.settings.gravatar_url!=''){ %>
             <div class="gravatar">
-                <img src="<%= prefs.gravatar_url %>" />
+                <img src="<%= prefs.settings.gravatar_url %>" />
             </div>
             <% } %>
             <h3 class="muted"><%= title %></h3>
