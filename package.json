@@ -1,6 +1,6 @@
 {
   "name": "nblog",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "Simple Blog CMS using Express and Mongo",
   "main": "nblog.js",
   "dependencies": {
@@ -9,7 +9,7 @@
     "moment": "~1.7.2",
     "crypto": "~0.0.3",
     "mongoose": "3.4.x",
-    "nlog": "0.1.x"
+    "logmongo": "0.1.x"
   },
   "devDependencies": {
     "mocha": "0.3.x"
