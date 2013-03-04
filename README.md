@@ -1,4 +1,3 @@
-
 # NBLOG
 
 Simple Blog CMS using Mongoose, Express and EJS.
@@ -32,14 +31,21 @@ Add the following to your main script and specify your login details for the Adm
     }
     nblog.init(params);
 
-The public path is relative to the module so to use a public dir in the root you would specify /../../../public
-Nblog requires Mongo DB so make sure to start it before running your App.
+The dev and prod values are the environments. These can be configured via Node Environment variables so you can specify different settings for your local and production sites. 
 
 ## Features
 
-  * Add, edit and delete articles
-  * Articles displayed in a blog layout with links to each article
-  * Urls built based on date and alias
+  * Add, edit and delete articles. Meta content included for some basic SEO.
+  * Articles displayed in a blog layout with links to each article.
+  * Article urls automatically built based on date and the alias.
+  * Add, edit and delete content pages.
+  * Additional content pages displayed in the main nav.
+  * Google sitemap generation.
+  * Twitter Bootstrap implemented.
+
+## Requirements
+
+MongoDB is required and should be running before starting Nblog.
 
 ## License 
 
