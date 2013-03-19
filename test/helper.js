@@ -1,31 +1,21 @@
 
 var should = require('should')
+  , db = require('../lib/mongoose')
   , helper = require('../lib/helper')
-  , nblog = require('../lib/nblog')
 
 var params = {
   config: {
     project: 'My Project',
     public: '/../public',
     per_page: '1'
-  },
-  dev: {
-    user: 'user',
-    pass: 'password',
-    port: '3000',
-    db:   'mongodb://localhost/items'
-    },
-  prod: {
-    user: 'user',
-    pass: 'password',
-    db:   'mongodb://localhost/articles'
-    }
+  }
 }
+
+db.connect('mongodb://localhost/test');
 
 describe('helper', function(){
   describe('#prefs()', function(){
     it('should return a valid prefs object', function(done){
-      nblog.init(params);
       helper.prefs(params, function(pref){
         pref.should.be.a('object');
         pref.should.have.property('settings');
