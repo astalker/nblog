@@ -1,16 +1,5 @@
 <% include head %>
 
-    <script>
-    $(function() {
-        $("#datepicker").datepicker();
-    });
-    $(document).ready(function(){
-        $('#articleForm').submit(function() {
-            return $(this).validate();
-        });
-    });
-    </script>
-    
 <form method="POST" action="<%= postpath %>" id="articleForm">
 	<% if (item) { %><input type="hidden" name="id" value="<%= item._id %>"><% } %>
 	<label>Title</label>
