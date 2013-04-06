@@ -1,26 +1,33 @@
 requirejs.config({
     paths: {
         "jquery": [
-            "https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min",
+            "http://code.jquery.com/jquery-1.9.1.min",
             "/javascripts/jquery-1.9.1.min"
+        ],
+        "jquery-ui": [
+            "http://code.jquery.com/ui/1.9.2/jquery-ui.min",
+            "/javascripts/jquery-ui.min"
+        ],
+        "jquery-form-validator": [
+            "/javascripts/jquery.formvalidator.min"
         ]
     }
 });
 
 require(["jquery"], function($) {
 
-     require(["http://code.jquery.com/ui/1.9.2/jquery-ui.js"], function() {
+    require(["jquery-ui"], function() {
         $(function() {
             $("#datepicker").datepicker();
         });
-     });
+    });
 
-     require(["/javascripts/jquery.formvalidator.min.js"], function() {
+    require(["jquery-form-validator"], function() {
          $(document).ready(function(){
             $('#articleForm').submit(function() {
                 return $(this).validate();
             });
         });
-     });
+    });
 
 });
