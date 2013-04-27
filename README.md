@@ -6,9 +6,15 @@ Simple Blog CMS using Mongoose, Express and EJS.
 
     $ npm install nblog
 
+or via Github
+
+    $ git clone git://github.com/astalker/nblog.git
+    $ cd nblog
+    $ npm install
+
 ## Usage
 
-Add the following to your main script and specify your login details for the Admin.
+To configure NBlog add the following to your main script. For your local environment (dev) you can specify a plain username and password however on production it is advisable to use environment variables. 
 
     var nblog = require('nblog');
     params = {
@@ -22,16 +28,14 @@ Add the following to your main script and specify your login details for the Adm
             pass: 'password',
             port: '3000',
             db:   'mongodb://localhost/articles'
-            },
+        },
         prod: {
-            user: 'user',
-            pass: 'password',
-            db:   'mongodb://localhost/articles'
-            }
+            user: process.env.NBLOG_USER,
+            pass: process.env.NBLOG_PASSWORD,
+            db:   process.env.NBLOG_DB
+        }
     }
     nblog.init(params);
-
-The dev and prod values are the environments. These can be configured via Node Environment variables so you can specify different settings for your local and production sites. 
 
 ## Features
 
