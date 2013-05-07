@@ -1,13 +1,13 @@
 <% include head %>
 
-	<article>
-		<h2><%= content.page  %></h2>
-		<% if(content.intro!=''){ %>
-		<div class="well">
-        	<%- content.intro %>
-        </div>
-        <% } %>
-        <p><%- content.content %></p>
-    </article>
+<article>
+  <h2><%= content.page  %></h2>
+  <% if(content.intro!=''){ %>
+    <div class="well">
+    <%- content.intro %>
+    </div>
+  <% } %>
+  <p><%- content.content %></p>
+</article>
 
 <% include foot %>

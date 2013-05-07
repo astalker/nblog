@@ -1,21 +1,21 @@
 <% include head %>
 
 <form method="POST" action="<%= postpath %>" id="articleForm">
-	<% if (item) { %><input type="hidden" name="id" value="<%= item._id %>"><% } %>
-	<label>Title</label>
-	<input type="text" name="title" value="<%= item.title %>" data-validation="required" />
-	<label>Date</label>
-	<input type="text" name="ts" value="<%= ts %>" data-validation="required" id="datepicker" />
-	<label>Alias</label>
-	<input type="text" name="alias" value="<%= item.alias %>" class="input" id="alias" />
-	<label>Content</label>
-	<textarea rows="5" cols="40" name="article"><%= item.article %></textarea>
-	<label>Description</label>
-	<textarea rows="3" cols="40" name="description" data-validation="required"><%= item.description %></textarea>
-	<label>Keywords</label>
-	<textarea rows="3" cols="40" name="keywords"><%= item.keywords %></textarea>
-	<label></label>
-	<input type="submit" value="Submit" class="btn" />
+  <% if (item) { %><input type="hidden" name="id" value="<%= item._id %>"><% } %>
+  <label>Title</label>
+  <input type="text" name="title" value="<%= item.title %>" data-validation="required" />
+  <label>Date</label>
+  <input type="text" name="ts" value="<%= ts %>" data-validation="required" id="datepicker" />
+  <label>Alias</label>
+  <input type="text" name="alias" value="<%= item.alias %>" class="input" id="alias" />
+  <label>Content</label>
+  <textarea rows="5" cols="40" name="article"><%= item.article %></textarea>
+  <label>Description</label>
+  <textarea rows="3" cols="40" name="description" data-validation="required"><%= item.description %></textarea>
+  <label>Keywords</label>
+  <textarea rows="3" cols="40" name="keywords"><%= item.keywords %></textarea>
+  <label></label>
+  <input type="submit" value="Submit" class="btn" />
 </form>
 
 <% include foot %>

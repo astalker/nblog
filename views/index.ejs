@@ -1,31 +1,30 @@
-
 <% include head %>
 
 <div class="btn-group">
-	<% if (prev > 0){ %>
-	<a class="btn btn-mini" href="/page/<%= prev %>">Prev</a>
-	<% } %>
-	<% if (next > 0){ %>
-	<a class="btn btn-mini" href="/page/<%= next %>">Next</a>
-	<% } %>
+  <% if (prev > 0){ %>
+  <a class="btn btn-mini" href="/page/<%= prev %>">Prev</a>
+  <% } %>
+  <% if (next > 0){ %>
+  <a class="btn btn-mini" href="/page/<%= next %>">Next</a>
+  <% } %>
 </div>
 
 <% articles.forEach(function(article) { %>
 
-	<article>
-		<h2><a href="/<%= moment(new Date(article.ts)).format("YYYY") %>/<%= moment(new Date(article.ts)).format("MM") %>/<%= moment(new Date(article.ts)).format("DD") %>/<%= article.alias  %>"><%= article.title  %></a></h2>
-		<h5><%= moment(new Date(article.ts)).format("Do MMM YYYY") %></h5>
-	    <p><%- article.article %></p>
-	</article>
+  <article>
+    <h2><a href="/<%= moment(new Date(article.ts)).format("YYYY") %>/<%= moment(new Date(article.ts)).format("MM") %>/<%= moment(new Date(article.ts)).format("DD") %>/<%= article.alias  %>"><%= article.title  %></a></h2>
+    <h5><%= moment(new Date(article.ts)).format("Do MMM YYYY") %></h5>
+    <p><%- article.article %></p>
+  </article>
 <% }); %>
 
 <div class="btn-group">
-	<% if (prev > 0){ %>
-	<a class="btn btn-mini" href="/page/<%= prev %>">Prev</a>
-	<% } %>
-	<% if (next > 0){ %>
-	<a class="btn btn-mini" href="/page/<%= next %>">Next</a>
-	<% } %>
+  <% if (prev > 0){ %>
+  <a class="btn btn-mini" href="/page/<%= prev %>">Prev</a>
+  <% } %>
+  <% if (next > 0){ %>
+  <a class="btn btn-mini" href="/page/<%= next %>">Next</a>
+  <% } %>
 </div>
 
 <% include foot %>

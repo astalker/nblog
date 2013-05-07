@@ -1,9 +1,9 @@
 <% include head %>
 
-	<article>
-		<h2><%= article.title  %></h2>
-		<h5><%= moment(new Date(article.ts)).format("Do MMM YYYY") %></h5>
-        <p><%- article.article %></p>
-    </article>
+<article>
+  <h2><%= article.title  %></h2>
+  <h5><%= moment(new Date(article.ts)).format("Do MMM YYYY") %></h5>
+  <p><%- article.article %></p>
+</article>
 
 <% include foot %>

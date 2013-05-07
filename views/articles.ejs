@@ -2,14 +2,14 @@
 
 <p>List of all articles</p>
 <table class="table table-hover">
-	<tbody>
-	<% articles.forEach(function(article) { %>
-		<tr>
-			<td>
-				<a href="/<%= moment(new Date(article.ts)).format("YYYY") %>/<%= moment(new Date(article.ts)).format("MM") %>/<%= moment(new Date(article.ts)).format("DD") %>/<%= article.alias.replace(/ /g, '-').toLowerCase()  %>"><%= article.title  %></a>
-			</td>
-			<td><%= moment(new Date(article.ts)).format("Do MMM YYYY") %></td>
-		</tr>
+  <tbody>
+  <% articles.forEach(function(article) { %>
+  <tr>
+    <td>
+      <a href="/<%= moment(new Date(article.ts)).format("YYYY") %>/<%= moment(new Date(article.ts)).format("MM") %>/<%= moment(new Date(article.ts)).format("DD") %>/<%= article.alias.replace(/ /g, '-').toLowerCase()  %>"><%= article.title  %></a>
+    </td>
+    <td><%= moment(new Date(article.ts)).format("Do MMM YYYY") %></td>
+  </tr>
 <% count = count + 1; }); %>
 
 </tbody>

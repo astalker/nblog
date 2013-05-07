@@ -1,44 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title><%= title %></title>
-    <meta name="keywords" content="<%= keywords %>" />
-    <meta name="description" content="<%= description %>" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title><%= title %></title>
+  <meta name="keywords" content="<%= keywords %>" />
+  <meta name="description" content="<%= description %>" />
 
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
-    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
-    <link rel="stylesheet" href="/stylesheets/bootstrap-responsive.css">
-    <link rel='stylesheet' href='/stylesheets/styles.css' />
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+  <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+  <link rel="stylesheet" href="/stylesheets/bootstrap-responsive.css">
+  <link rel='stylesheet' href='/stylesheets/styles.css' />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 </head>
 <body>
 
-    <div class="container-narrow">
+  <div class="container-narrow">
+    <div class="masthead">
+      <ul class="nav nav-pills pull-right">
+        <li<% if (title==='Home'){ %> class="active"<% } %>><a href="/">Home</a></li>
+        <li<% if (title==='Articles'){ %> class="active"<% } %>><a href="/articles">Articles</a></li>
+        <% prefs.pages.forEach(function(page) { %>
+        <li><a href="/content/<%= page.alias %>"><%= page.page %></a></li>
+        <% }); %>
+        <% if (loggedin){ %>
+        <li<% if (title==='Admin' || title==='Edit' || title==='Preferences'){ %> class="active"<% } %>><a href='/admin'>Admin</a></li>
+        <li><a href='/logout'>Logout</a></li>
+        <% } else { %>
+        <li><a href='/login'>Login</a></li>
+        <% } %>
+      </ul>
+      <% if (prefs.settings.gravatar_url!=''){ %>
+      <div class="gravatar">
+        <img src="<%= prefs.settings.gravatar_url %>" alt="Gravatar" />
+      </div>
+      <% } %>
+      <h3 class="muted"><%= title %></h3>
+    </div>
 
-        <div class="masthead">
-            <ul class="nav nav-pills pull-right">
-                <li<% if (title==='Home'){ %> class="active"<% } %>><a href="/">Home</a></li>
-                <li<% if (title==='Articles'){ %> class="active"<% } %>><a href="/articles">Articles</a></li>
-                <% prefs.pages.forEach(function(page) { %>
-                <li><a href="/content/<%= page.alias %>"><%= page.page %></a></li>
-                <% }); %>
-                <% if (loggedin){ %>
-                <li<% if (title==='Admin' || title==='Edit' || title==='Preferences'){ %> class="active"<% } %>><a href='/admin'>Admin</a></li>
-                <li><a href='/logout'>Logout</a></li>
-                <% } else { %>
-                <li><a href='/login'>Login</a></li>
-                <% } %>
-            </ul>
-            <% if (prefs.settings.gravatar_url!=''){ %>
-            <div class="gravatar">
-                <img src="<%= prefs.settings.gravatar_url %>" />
-            </div>
-            <% } %>
-            <h3 class="muted"><%= title %></h3>
-        </div>
+    <hr>
 
-        <hr>
-
-        <div class="row-fluid">
+    <div class="row-fluid">
