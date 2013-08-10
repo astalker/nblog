@@ -4,13 +4,21 @@ Simple Blog CMS using Mongoose, Express and EJS.
 
 ## Installation
 
-    $ npm install nblog
+```bash
+npm install nblog
+```
 
 or via Github
 
-    $ git clone git://github.com/astalker/nblog.git
-    $ cd nblog
-    $ npm install
+```bash
+git clone git://github.com/astalker/nblog.git
+cd nblog
+npm install
+```
+
+## Requirements
+
+MongoDB is required and should be running before starting NBlog.
 
 ## Usage
 
@@ -37,6 +45,20 @@ To configure NBlog add the following to your main script. For your local environ
     }
     nblog.init(params);
 
+## Tests
+
+Unit tests are written with the Mocha Test Framework and the Should BDD Assertion library. Run them automatically using the Grunt task (from within the NBlog directory). The Grunt task will watch for file changes in the test and lib directories.
+
+```bash
+grunt watch
+```
+
+or run the tests manually
+
+```bash
+mocha test/spec
+```
+
 ## Features
 
   * Add, edit and delete articles. Meta content included for some basic SEO.
@@ -46,7 +68,3 @@ To configure NBlog add the following to your main script. For your local environ
   * Additional content pages displayed in the main nav.
   * Google sitemap generation.
   * Twitter Bootstrap implemented.
-
-## Requirements
-
-MongoDB is required and should be running before starting Nblog.

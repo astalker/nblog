@@ -11,7 +11,9 @@
     "mongoose": "3.4.x",
     "logmongo": "0.1.x",
     "should": "1.2.x",
-    "node-sass": "0.6.x"
+    "node-sass": "0.6.x",
+    "grunt-contrib-watch": "0.5.x",
+    "grunt-mocha-cli": "1.0.x"
   },
   "devDependencies": {
     "mocha": "0.3.x"
