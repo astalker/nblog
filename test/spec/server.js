@@ -1,12 +1,12 @@
 
 var should = require('should'),
-    db = require('../lib/mongoose'),
-    helper = require('../lib/helper');
+    db = require('../../lib/mongoose'),
+    helper = require('../../lib/helper');
 
 var params = {
   config: {
     project: 'My Project',
-    public: '/../public',
+    public: '/../../public',
     per_page: '1'
   }
 };
