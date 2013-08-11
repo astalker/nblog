@@ -1,7 +1,6 @@
 
 var should = require('should'),
-    db = require('../../lib/mongoose'),
-    helper = require('../../lib/helper');
+    db = require('../../lib/mongoose');
 
 var params = {
   config: {

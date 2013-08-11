@@ -45,6 +45,8 @@ To configure NBlog add the following to your main script. For your local environ
     }
     nblog.init(params);
 
+The sitemap is available at sitemap.xml
+
 ## Tests
 
 Unit tests are written with the Mocha Test Framework and the Should BDD Assertion library. Run them automatically using the Grunt task (from within the NBlog directory). The Grunt task will watch for file changes in the test and lib directories.
