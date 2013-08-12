@@ -37,7 +37,7 @@ To configure NBlog add the following to your main script. For your local environ
             pass: process.env.NBLOG_PASSWORD,
             db:   process.env.NBLOG_DB
         }
-    }
+    };
     nblog.init(params);
 
 The sitemap is available at sitemap.xml. The template files are located in nblog/views and the javascript and stylesheets are in the nblog/public directory.
