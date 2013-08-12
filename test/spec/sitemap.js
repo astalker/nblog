@@ -3,14 +3,6 @@ var should = require('should'),
     db = require('../../lib/mongoose'),
     sitemap = require('../../lib/sitemap');
 
-var params = {
-  config: {
-    project: 'My Project',
-    public: '/../../public',
-    per_page: '1'
-  }
-};
-
 db.connect('mongodb://localhost/test');
 
 describe('sitemap', function() {
@@ -25,7 +17,7 @@ describe('sitemap', function() {
   });
 
   describe('create', function() {
-    it('should create a sitemape', function(done) {
+    it('should create a sitemap', function(done) {
       sitemap.create('www.example.com', function(sitemap) {
         sitemap.should.be.a('string').and.not.have.length(0);
         done();

@@ -3,20 +3,12 @@ var should = require('should'),
     db = require('../../lib/mongoose'),
     helper = require('../../lib/helper');
 
-var params = {
-  config: {
-    project: 'My Project',
-    public: '/../../public',
-    per_page: '1'
-  }
-};
-
 db.connect('mongodb://localhost/test');
 
 describe('helper', function() {
   describe('#prefs()', function() {
     it('should return a valid prefs object', function(done) {
-      helper.prefs(params, function(pref) {
+      helper.prefs(function(pref) {
         pref.should.be.a('object');
         pref.should.have.property('settings');
         pref.should.have.property('pages');

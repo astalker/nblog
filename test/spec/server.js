@@ -2,14 +2,6 @@
 var should = require('should'),
     db = require('../../lib/mongoose');
 
-var params = {
-  config: {
-    project: 'My Project',
-    public: '/../../public',
-    per_page: '1'
-  }
-};
-
 db.connect('mongodb://localhost/test');
 
 describe('Articles', function() {

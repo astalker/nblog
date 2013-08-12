@@ -26,11 +26,6 @@ To configure NBlog add the following to your main script. For your local environ
 
     var nblog = require('nblog');
     params = {
-        config: {
-            project: 'My Project',
-            public: '/../public',
-            per_page: '10'
-        },
         dev: {
             user: 'user',
             pass: 'password',
@@ -45,7 +40,7 @@ To configure NBlog add the following to your main script. For your local environ
     }
     nblog.init(params);
 
-The sitemap is available at sitemap.xml
+The sitemap is available at sitemap.xml. The template files are located in nblog/views and the javascript and stylesheets are in the nblog/public directory.
 
 ## Tests
 
