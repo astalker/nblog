@@ -1,6 +1,5 @@
-
 var should = require('should'),
-    db = require('../../lib/mongoose');
+    db = require('../../lib/db');
 
 db.connect('mongodb://localhost/test');
 

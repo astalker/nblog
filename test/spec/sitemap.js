@@ -1,6 +1,6 @@
 
 var should = require('should'),
-    db = require('../../lib/mongoose'),
+    db = require('../../lib/db'),
     sitemap = require('../../lib/sitemap');
 
 db.connect('mongodb://localhost/test');
