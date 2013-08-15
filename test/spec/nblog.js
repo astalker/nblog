@@ -8,7 +8,7 @@ describe('nblog', function() {
         user: 'user',
         pass: 'password',
         port: '3001',
-        db:   'mongodb://localhost/items'
+        db:   'mongodb://localhost/test'
       }
     };
     params.prod = params.dev;
