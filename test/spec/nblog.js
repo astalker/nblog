@@ -13,8 +13,8 @@ describe('nblog', function() {
     };
     params.prod = params.dev;
 
-    it('should initialise the app', function(done) {
-      var err = nblog.init(params);
+    it('should initialise the app without an error', function(done) {
+      nblog.init(params);
       done();
     });
   });
