@@ -1,6 +1,6 @@
 {
   "name": "nblog",
-  "version": "1.4.6",
+  "version": "1.5.2",
   "description": "Simple Blog CMS using Express and Mongo",
   "main": "nblog.js",
   "dependencies": {
