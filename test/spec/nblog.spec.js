@@ -1,7 +1,8 @@
-var nblog = require('../../lib/nblog');
+var nblog = require('../../lib/nblog'),
+    server = require('../../lib/server');
 
 describe('nblog', function() {
-  describe('#init()', function() {
+  describe('when initialising the app', function() {
     var params = {
       dev: {
         user: 'user',
@@ -18,43 +19,33 @@ describe('nblog', function() {
     });
   });
 
-
-  describe('#data()', function() {
-    var prefs;
+  describe('when logged in should proceed to next function', function() {
     beforeEach(function() {
-      prefs = {
-        settings: {
-          name: 'name',
-          description: 'desc',
-          keywords: 'keywords',
-        }
-      };
+      spyOn(server, 'checkLoggedIn').andReturn(true);
+      next = jasmine.createSpy('next');
+      var data = nblog.checkAccess(null, null, next);
     });
 
     it('should build a data object using prefs as defaults', function(done) {
-      var c = {
-        field: 'field'
-      };
-      // var data = nblog.data(prefs, false, c);
-      // console.log(data);
-      // data.should.be.a('object');
-      // data.should.have.property('title', 'name');
-      // data.should.have.property('description', 'desc');
-      // data.should.have.property('keywords', 'keywords');
-      // data.should.have.property('loggedin', false);
-      // data.should.have.property('field', 'field');
+      expect(next).toHaveBeenCalled();
       done();
     });
+  });
 
-    // it('should build a data object overiding title', function(done) {
-    //   var c = {
-    //     title: 'title'
-    //   };
-    //   var data = nblog.data(prefs, false, c);
-    //   data.should.be.a('object');
-    //   data.should.have.property('title', 'title');
-    //   done();
-    // });
+  describe('when not logged in should redirect to login page', function() {
+    beforeEach(function() {
+      spyOn(server, 'checkLoggedIn').andReturn(false);
+      res = {
+        redirect: function(value) {}
+      };
+      spyOn(res, 'redirect');
+      var data = nblog.checkAccess(null, res, null);
+    });
+
+    it('should build a data object using prefs as defaults', function(done) {
+      expect(res.redirect).toHaveBeenCalledWith('/login');
+      done();
+    });
   });
 
 });
