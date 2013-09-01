@@ -2,7 +2,7 @@
 var db = require('../../lib/db'),
     helper = require('../../lib/helper');
 
-db.connect('mongodb://localhost/test');
+db.connect('mongodb://localhost/test', function () {});
 
 describe('helper', function() {
   describe('#prefs()', function() {
@@ -49,7 +49,7 @@ describe('helper', function() {
         settings: {
           name: 'name',
           description: 'desc',
-          keywords: 'keywords',
+          keywords: 'keywords'
         }
       };
       server = {

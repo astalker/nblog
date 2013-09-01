@@ -1,7 +1,7 @@
 var db = require('../../lib/db'),
     sitemap = require('../../lib/sitemap');
 
-db.connect('mongodb://localhost/test');
+db.connect('mongodb://localhost/test', function () {});
 
 describe('sitemap', function() {
   describe('url', function() {
