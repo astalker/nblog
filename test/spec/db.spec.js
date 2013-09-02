@@ -10,17 +10,17 @@ describe('Articles', function() {
 
   //add some test data
   beforeEach(function(done) {
-    db.add('article1', '', 'article1', 'description', 'keywords', 'alias', function(doc) {
+    db.add('article1', '06/02/2013', 'article1', 'description', 'keywords', 'article-1', function(doc) {
       done();
     });
   });
   beforeEach(function(done) {
-    db.add('article2', '', 'article2', 'description', 'keywords', 'alias', function(doc) {
+    db.add('article2', '06/03/2013', 'article2', 'description', 'keywords', 'article-2', function(doc) {
       done();
     });
   });
   beforeEach(function(done) {
-    db.add('article3', '', 'article3', 'description', 'keywords', 'alias', function(doc) {
+    db.add('article3', '06/04/2013', 'article3', 'description', 'keywords', 'article-3', function(doc) {
       done();
     });
   });
@@ -51,10 +51,17 @@ describe('Articles', function() {
   });
 
   describe('#allArticles()', function() {
-    it('should return articles 3 and 2', function(done) {
+    it('should get 1 Article', function(done) {
+      db.allArticles(1, function(err, articles) {
+        expect(articles.length).toEqual(1);
+        expect(articles[0].title).toEqual('article3');
+        done();
+      });
+    });
+    it('should return most recent articles 3 and 2', function(done) {
       db.allArticles(2, function(err, articles) {
         expect(articles.length).toEqual(2);
-        expect(articles[0].title).toEqual('article3');
+        expect(articles[1].title).toEqual('article2');
         done();
       });
     });
@@ -87,6 +94,14 @@ describe('Articles', function() {
       db.allMenuPages(function(err, pages) {
         expect(pages.length).toEqual(1);
         expect(pages[0].page).toEqual('page2');
+        done();
+      });
+    });
+  });
+
+  describe('#findArticleByDate()', function() {
+    it('Should find an Article by Date an title', function(done) {
+      db.findArticleByDate('2013', '06', '01', 'article-1', function(err, doc) {
         done();
       });
     });
