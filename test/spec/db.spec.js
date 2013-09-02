@@ -1,14 +1,7 @@
 var db = require('../../lib/db');
 
 db.connect('mongodb://localhost/test', function (error) {
-  if (error)
-    console.log(error);
-    return false;
   done();
-});
-
-describe('Connection', function() {
-
 });
 
 describe('Articles', function() {
