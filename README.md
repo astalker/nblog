@@ -22,10 +22,10 @@ MongoDB is required and should be running before starting NBlog.
 
 ## Usage
 
-To configure NBlog add the following to your main script. For your local environment (dev) you can specify a plain username and password however on production it is advisable to use environment variables. 
+To configure NBlog add the following to your main script. For your local environment (dev) you can specify a plain username and password however on production it is advisable to use environment variables.
 
     var nblog = require('nblog');
-    params = {
+    var params = {
         dev: {
             user: 'user',
             pass: 'password',
@@ -41,6 +41,15 @@ To configure NBlog add the following to your main script. For your local environ
     nblog.init(params);
 
 The sitemap is available at sitemap.xml. The template files are located in nblog/views and the javascript and stylesheets are in the nblog/public directory.
+
+## Path
+
+The public path for the Javascript and Css is within the Nblog dir but you can override this in the params. Setting public_path: true will use a public dir in your app root. This is useful is you wish to to use your own JS and CSS and not worry about it being overridden when Nblog is updated.
+
+    var params = {
+        public_path: true
+        ...
+    }
 
 ## Tests
 
