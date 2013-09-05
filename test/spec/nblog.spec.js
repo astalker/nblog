@@ -1,4 +1,5 @@
-var nblog = require('../../lib/nblog'),
+var db = require('../../lib/db'),
+    nblog = require('../../lib/nblog'),
     server = require('../../lib/server');
 
 describe('nblog', function() {
@@ -39,11 +40,35 @@ describe('nblog', function() {
         redirect: function(value) {}
       };
       spyOn(res, 'redirect');
-      var data = nblog.checkAccess(null, res, null);
+      nblog.checkAccess(null, res, null);
     });
 
     it('should build a data object using prefs as defaults', function(done) {
       expect(res.redirect).toHaveBeenCalledWith('/login');
+      done();
+    });
+  });
+
+  xdescribe('Getting a Single Article', function() {
+    beforeEach(function() {
+      spyOn(db, 'findArticleByDate').andReturn(null);
+      res = {
+        render: function(value) {}
+      };
+      spyOn(res, 'render');
+      req = {
+        params: { year: '2009', month: '01', day: '01', title: 'test' }
+      };
+      nblog.article(req, res);
+    });
+
+    it('should render an article', function(done) {
+      expect(db.findArticleByDate).toHaveBeenCalled();
+      //test callback
+      done();
+    });
+
+    it('should render a 404', function(done) {
       done();
     });
   });

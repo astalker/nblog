@@ -101,7 +101,16 @@ describe('Articles', function() {
 
   describe('#findArticleByDate()', function() {
     it('Should find an Article by Date an title', function(done) {
-      db.findArticleByDate('2013', '06', '01', 'article-1', function(err, doc) {
+      db.findArticleByDate('2013', '06', '02', 'article-1', function(err, doc) {
+        expect(doc.alias).toEqual('article-1');
+        expect(doc.title).toEqual('article1');
+        done();
+      });
+    });
+    it('Should return null when an article is not found', function(done) {
+      db.findArticleByDate('2013', '06', '01', 'no-article', function(err, doc) {
+        console.log(doc);
+        expect(doc).toBeNull();
         done();
       });
     });
