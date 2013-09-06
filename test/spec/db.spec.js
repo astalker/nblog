@@ -100,16 +100,25 @@ describe('Articles', function() {
   });
 
   describe('#findArticleByDate()', function() {
-    it('Should find an Article by Date an title', function(done) {
-      db.findArticleByDate('2013', '06', '02', 'article-1', function(err, doc) {
+    it('Should find an Article by Date and title', function(done) {
+      var req = {
+        params: {
+          year: '2013', month: '06', day: '02', title: 'article-1'
+        }
+      };
+      db.findArticleByDate(req, null, function(err, doc) {
         expect(doc.alias).toEqual('article-1');
         expect(doc.title).toEqual('article1');
         done();
       });
     });
     it('Should return null when an article is not found', function(done) {
-      db.findArticleByDate('2013', '06', '01', 'no-article', function(err, doc) {
-        console.log(doc);
+      var req = {
+        params: {
+          year: '2013', month: '06', day: '01', title: 'no-article'
+        }
+      };
+      db.findArticleByDate(req, null, function(err, doc) {
         expect(doc).toBeNull();
         done();
       });

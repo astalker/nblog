@@ -49,28 +49,17 @@ describe('nblog', function() {
     });
   });
 
-  xdescribe('Getting a Single Article', function() {
+  describe('Getting a Single Article', function() {
     beforeEach(function() {
-      spyOn(db, 'findArticleByDate').andReturn(null);
-      res = {
-        render: function(value) {}
-      };
-      spyOn(res, 'render');
-      req = {
-        params: { year: '2009', month: '01', day: '01', title: 'test' }
-      };
-      nblog.article(req, res);
+      spyOn(db, 'findArticleByDate');
+      nblog.article();
     });
 
     it('should render an article', function(done) {
       expect(db.findArticleByDate).toHaveBeenCalled();
-      //test callback
       done();
     });
 
-    it('should render a 404', function(done) {
-      done();
-    });
   });
 
 });
