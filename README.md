@@ -53,7 +53,7 @@ The public path for the Javascript and Css is within the Nblog dir but you can o
 
 ## Tests
 
-Unit tests are written with the Mocha Test Framework and the Should BDD Assertion library. Run them automatically using the Grunt task (from within the NBlog directory). The Grunt task will watch for file changes in the test and lib directories.
+Unit tests are written using Jasmine. Run them automatically using the Grunt task (from within the Nblog directory). The Grunt task will watch for file changes in the test and lib directories.
 
 ```bash
 grunt watch
@@ -62,7 +62,7 @@ grunt watch
 or run the tests manually
 
 ```bash
-mocha test/spec
+jasmine-node test/spec
 ```
 
 ## Features
