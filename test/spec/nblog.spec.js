@@ -3,6 +3,7 @@ var db = require('../../lib/db'),
     server = require('../../lib/server');
 
 describe('nblog', function() {
+
   describe('when initialising the app', function() {
     var params = {
       dev: {
@@ -55,11 +56,21 @@ describe('nblog', function() {
       nblog.article();
     });
 
-    it('should render an article', function(done) {
+    it('should call the model to get the article', function(done) {
       expect(db.findArticleByDate).toHaveBeenCalled();
       done();
     });
-
   });
 
+  describe('Editing an Article', function() {
+    beforeEach(function() {
+      spyOn(db, 'findArticleById');
+      nblog.edit();
+    });
+
+    it('should call the model to get the article', function(done) {
+      expect(db.findArticleById).toHaveBeenCalled();
+      done();
+    });
+  });
 });
