@@ -53,7 +53,10 @@ describe('nblog', function() {
   describe('Getting a Single Article', function() {
     beforeEach(function() {
       spyOn(db, 'findArticleByDate');
-      nblog.article();
+      req = {
+        params: 'test'
+      }
+      nblog.article(req);
     });
 
     it('should call the model to get the article', function(done) {
@@ -65,7 +68,10 @@ describe('nblog', function() {
   describe('Editing an Article', function() {
     beforeEach(function() {
       spyOn(db, 'findArticleById');
-      nblog.edit();
+      req = {
+        query: { id: '1' }
+      }
+      nblog.edit(req);
     });
 
     it('should call the model to get the article', function(done) {
