@@ -1,7 +1,7 @@
 var helper = require('../../lib/helper'),
     render = require('../../lib/render');
 
-describe('Helper', function() {
+describe('Render:', function() {
 
   describe('Rendering an Article', function() {
     beforeEach(function() {
@@ -9,7 +9,7 @@ describe('Helper', function() {
       article = {
         title: 'title', description: 'desc', keywords: 'key', postpath: '/', article: '', ts: '123'
       };
-      render.article(null, article, 'req', 'res');
+      render.article(article, 'req', 'res');
     });
 
     it('should display an article', function(done) {

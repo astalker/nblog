@@ -4,7 +4,7 @@ var db = require('../../lib/db'),
 
 db.connect('mongodb://localhost/test', function () {});
 
-describe('helper', function() {
+describe('Helper:', function() {
   describe('#prefs()', function() {
     it('should return a valid prefs object', function(done) {
       helper.prefs(function(pref) {

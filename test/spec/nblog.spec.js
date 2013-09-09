@@ -2,7 +2,7 @@ var db = require('../../lib/db'),
     nblog = require('../../lib/nblog'),
     server = require('../../lib/server');
 
-describe('nblog', function() {
+describe('Nblog:', function() {
 
   describe('when initialising the app', function() {
     var params = {
@@ -51,18 +51,17 @@ describe('nblog', function() {
   });
 
   describe('Getting a Single Article', function() {
-    beforeEach(function() {
+
+    it('should call the model to get the article', function(done) {
       spyOn(db, 'findArticleByDate');
       req = {
         params: 'test'
       }
       nblog.article(req);
-    });
-
-    it('should call the model to get the article', function(done) {
       expect(db.findArticleByDate).toHaveBeenCalled();
       done();
     });
+
   });
 
   describe('Editing an Article', function() {
