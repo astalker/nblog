@@ -1,5 +1,5 @@
 var db = require('../../lib/db'),
-    sitemap = require('../../lib/sitemap');
+  sitemap = require('../../lib/sitemap');
 
 db.connect('mongodb://localhost/test', function () {});
 

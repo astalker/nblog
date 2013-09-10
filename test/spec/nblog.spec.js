@@ -1,6 +1,6 @@
 var db = require('../../lib/db'),
-    nblog = require('../../lib/nblog'),
-    server = require('../../lib/server');
+  nblog = require('../../lib/nblog'),
+  server = require('../../lib/server');
 
 describe('Nblog:', function() {
 

@@ -1,5 +1,5 @@
 var helper = require('../../lib/helper'),
-    render = require('../../lib/render');
+  render = require('../../lib/render');
 
 describe('Render:', function() {
 

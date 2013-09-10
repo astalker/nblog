@@ -1,6 +1,5 @@
-
 var db = require('../../lib/db'),
-    helper = require('../../lib/helper');
+  helper = require('../../lib/helper');
 
 db.connect('mongodb://localhost/test', function () {});
 
